@@ -1,0 +1,18 @@
+<div class="container">
+
+  <div class="time-remaining">
+    <h3>TIME REMAINING</h3>
+    <!-- <p>{{days > 0 ? days + "d" : "00"}}:{{hours > 0 ? hours + "h" : "00"}}:{{minutes > 0 ? minutes + "m":
+      "00"}}:{{seconds > 0 ? seconds + "s" : "00"}}</p> -->
+      <p>{{formatTime(countdown)}}</p>
+  </div>
+  <h2 style="text-align: center;">{{isLoaded ? "" :"LOAD VOUCHER"}}</h2>
+  <form [formGroup]="voucherForm" (ngSubmit)="loadVoucher() ">
+    <mat-form-field [hidden]="isLoaded">
+      <mat-label>Enter Voucher</mat-label>
+      <input formControlName="voucher" matInput>
+    </mat-form-field><br>
+    <p  [class]="message_class" class="message text-align">{{message}}</p>
+    <button mat-raised-button col or="primary" type="submit">{{isLoaded ? "Click to go online" :"LOAD"}}</button>
+  </form>
+</div>
